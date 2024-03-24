@@ -43,6 +43,11 @@ window.addEventListener('load', () => {
         const task_actions_el = document.createElement('div');
         task_actions_el.classList.add('actions');
         
+        // Create checkbox for task completion
+        const task_checkbox_el = document.createElement('input');
+        task_checkbox_el.classList.add('checkbox');
+        task_checkbox_el.type = 'checkbox';
+
         // Create edit button
         const task_edit_el = document.createElement('button');
         task_edit_el.classList.add('edit');
@@ -53,7 +58,8 @@ window.addEventListener('load', () => {
         task_delete_el.classList.add('delete');
         task_delete_el.innerText = 'Delete';
 
-        // Append buttons to actions element
+        // Append elements to actions element
+        task_actions_el.appendChild(task_checkbox_el);
         task_actions_el.appendChild(task_edit_el);
         task_actions_el.appendChild(task_delete_el);
 
@@ -81,6 +87,15 @@ window.addEventListener('load', () => {
         // Add event listener to delete button
         task_delete_el.addEventListener('click', (e) => {
             list_el.removeChild(task_el);
+        });
+
+        // Add event listener to checkbox
+        task_checkbox_el.addEventListener('change', (e) => {
+            if (task_checkbox_el.checked) {
+                task_input_el.style.textDecoration = 'line-through';
+            } else {
+                task_input_el.style.textDecoration = 'none';
+            }
         });
     });
 });

@@ -7,7 +7,7 @@
 	--purple: #8B5CF6;
 	--light: #EEE;
 }
-
+/* Base Styles */
 * {
 	margin: 0;
 	box-sizing: border-box;
@@ -35,9 +35,9 @@ header h1{
 	color: var(--grey);
 	margin-bottom: 1rem;
 }
-
+/* Form Styles */
 #new-task-form {
-	display: flex;;
+	display: flex;
 }
 
 input, button {
@@ -79,7 +79,7 @@ input, button {
 #new-task-submit:active {
 	opacity: 0.6;
 }
-
+/* Main Content Styles */
 main {
 	flex: 1 1 0%;
 	max-width: 800px;
@@ -153,4 +153,26 @@ main {
 
 .task .actions .delete {
 	color: crimson;
+}
+/*--Responsive styles-*/
+@media (max-width: 800px) {
+    #new-task-form {
+        flex-direction: column;
+    }
+
+    #new-task-input {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 800px) {
+    #new-task-form {
+        flex-direction: column;
+    }
+
+    #new-task-input {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
 }
